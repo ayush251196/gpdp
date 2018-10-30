@@ -1,0 +1,582 @@
+
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+
+    android:orientation="vertical"
+    android:background="@drawable/gpdp_background"
+    tools:context="com.example.project.hci_lab.basic_info">
+
+
+    <LinearLayout
+        android:id="@+id/linear_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_gravity="left">
+
+            <ImageButton
+                android:id="@+id/ben_image"
+                android:layout_width="79dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="268dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ben_image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageButton
+                android:id="@+id/btn_home"
+                android:layout_width="53dp"
+                android:layout_height="51dp"
+
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="268dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </android.support.constraint.ConstraintLayout>
+
+
+        <ScrollView
+            android:id="@+id/scrollview1"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+
+            android:fillViewport="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_beneficiary_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Beneficiary Code " />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+
+                        android:id="@+id/editText_beneficiary_code"
+                        android:layout_width="285dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="left"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint=""
+                        android:inputType="textPersonName" />
+
+                    <Button
+                        android:id="@+id/btn_qr_code"
+                        android:layout_width="108dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:text="Scan" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tv_name_head_of_family"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name of Head of family " />
+
+                <EditText
+
+                    android:id="@+id/editText_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="textPersonName" />
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gender " />
+
+
+                <RadioGroup
+                    android:id="@+id/radio_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RadioButton
+                        android:id="@+id/radio_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:id="@+id/radio_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female" />
+
+                    <RadioButton
+                        android:id="@+id/radio_transgender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transgender" />
+                </RadioGroup>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="1dp" />
+
+                <TextView
+                    android:id="@+id/tv_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Age " />
+
+                <EditText
+
+                    android:id="@+id/editText_age"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="text|number"
+                    android:onClick="showNumberPicker" />
+
+
+                <TextView
+                    android:id="@+id/tv_hamlet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name of the Hamlet " />
+
+                <EditText
+
+                    android:id="@+id/editText_Hamlet"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="textPersonName" />
+
+
+                <TextView
+                    android:id="@+id/tv_ward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Wrad number" />
+
+                <EditText
+
+                    android:id="@+id/editText_ward"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="text|number" />
+
+                <TextView
+                    android:id="@+id/tv_total_family_member"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="Total Family Members " />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:gravity="left"
+                        android:lines="1"
+                        android:text=" Male "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:text=" Female "
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_weight="1.0"
+                        android:gravity="right"
+                        android:lines="1"
+                        android:text=" Trans gender "
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="3">
+
+                    <EditText
+                        android:id="@+id/editText_male_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:imeOptions="actionSend"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/editText_female_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:imeOptions="actionSend"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/editText_transgender_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:imeOptions="actionSend"
+                        android:inputType="number"
+                        android:text="0" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="District " />
+
+                <EditText
+
+                    android:id="@+id/editText_district"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="none"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_subdivision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Subdivision " />
+
+                <EditText
+
+                    android:id="@+id/editText_subdivision"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="none"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_block"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Block " />
+
+                <EditText
+
+                    android:id="@+id/editText_block"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="none"
+                    android:textIsSelectable="true" />
+
+                <TextView
+                    android:id="@+id/tv_gp_vc_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Type " />
+
+                <RadioGroup
+                    android:id="@+id/radio_gp_vc_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RadioButton
+                        android:id="@+id/radio_gp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="GP" />
+
+                    <RadioButton
+                        android:id="@+id/radio_vc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="VC" />
+
+
+                </RadioGroup>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C" />
+
+                <TextView
+                    android:id="@+id/tv_gp_vc_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name of GP/VC  " />
+
+
+                <EditText
+                    android:id="@+id/editText_gp_vc_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:gravity="left"
+                    android:hint=""
+                    android:inputType="none"
+                    android:textIsSelectable="true"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/tv_caste"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Caste " />
+
+
+                <android.support.v4.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <Spinner
+                    android:id="@+id/spinner_caste"
+                    style="@android:style/Widget.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/spinner_qualification"
+                    android:background="@android:color/transparent"
+                    android:entries="@array/caste_group_arrays" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C" />
+
+
+                <TextView
+                    android:id="@+id/tv_religion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Religion " />
+
+                <Spinner
+                    android:id="@+id/spinner_religion"
+                    style="@android:style/Widget.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/spinner_qualification"
+                    android:background="@android:color/transparent"
+                    android:entries="@array/religion_group_arrays" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C" />
+
+                <TextView
+                    android:id="@+id/tv_acquired_house"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Self acquired house / Rented House" />
+
+                <Spinner
+                    android:id="@+id/spinner_acquired_house"
+                    style="@android:style/Widget.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/spinner_qualification"
+
+                    android:background="@null"
+                    android:entries="@array/acquired_house_group_arrays" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C" />
+
+
+                <TextView
+                    android:id="@+id/tv_house_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Type of House" />
+
+                <Spinner
+                    android:id="@+id/spinner_house_type"
+                    style="@android:style/Widget.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/spinner_qualification"
+                    android:background="@null"
+                    android:entries="@array/house_type_arrays" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C" />
+
+
+                <TextView
+                    android:id="@+id/tv_secc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weather listed under SECC" />
+
+                <Spinner
+                    android:id="@+id/spinner_secc"
+                    style="@android:style/Widget.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/spinner_qualification"
+                    android:background="@null"
+                    android:entries="@array/secc_arrays" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C" />
+
+
+                <TextView
+                    android:id="@+id/tv_secc_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Type of SECC" />
+
+                <Spinner
+                    android:id="@+id/spinner_secc_type"
+                    style="@android:style/Widget.Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/spinner_qualification"
+                    android:background="@null"
+                    android:entries="@array/secc_type_arrays" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#4E4D4C" />
+
+
+                <ImageButton
+                    android:id="@+id/save_proceed"
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/fab_margin"
+
+                    android:background="@drawable/next" />
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_benimage_container"
+        android:layout_width="390dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="3dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+</android.support.constraint.ConstraintLayout>

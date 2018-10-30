@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--****************Section 1 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_normal_1"
+                android:gravity="left"
+                android:text=" Any incidence occurred with / in your family"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 2 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="1. Murder"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_murder_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_murder_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_murder_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+                android:id="@+id/tv_murder_justice_27"
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_murder_justice_27"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_murder_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_murder_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_murder_justice_no_reason_27"
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_murder_justice_no_reason_27"
+
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                />
+
+
+
+
+
+            <!--****************Section 3 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="2. Rape"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_rape_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_rape_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_rape_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_rape_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_rape_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_rape_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_rape_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_rape_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                />
+
+            <!--****************Section 4 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="3. Kidnap"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_kidnap_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_kidnap_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_kidnap_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_kidnap_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_kidnap_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_kidnap_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_kidnap_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_kidnap_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+               />
+
+            <!--****************Section 5 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="4. Domestic violence"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_domestic_violence_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_domestic_violence_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_domestic_violence_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_domestic_violence_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_domestic_violence_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_domestic_violence_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_domestic_violence_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_domestic_violence_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <!--****************Section 6 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="5. Communal violence"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_communal_violence_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_communal_violence_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_communal_violence_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_communal_violence_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_communal_violence_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_communal_violence_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_communal_violence_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_communal_violence_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                 />
+
+            <!--****************Section 7 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="6. Robbery"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_robbery_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_robbery_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_robbery_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_robbery_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_robbery_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_robbery_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_robbery_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_robbery_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                />
+
+            <!--****************Section 8 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="7. Child abuse"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_child_abuse_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_child_abuse_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_child_abuse_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_child_abuse_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_child_abuse_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_child_abuse_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_murder_child_abuse_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_child_abuse_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                 />
+
+            <!--****************Section 9 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="8. Unfair labour practices"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_unfair_labour_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_unfair_labour_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_unfair_labour_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_unfair_labour_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_unfair_labour_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_unfair_labour_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_unfair_labour_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_unfair_labour_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <!--****************Section 10 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="9. Racial discrimination"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_racial_discrimination_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_racial_discrimination_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_racial_discrimination_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_racial_discrimination_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_racial_discrimination_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_racial_discrimination_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_racial_discrimination_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_racial_discrimination_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <!--****************Section 11 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="10. Discrimination due to gender"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_gender_discrimination_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_gender_discrimination_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_gender_discrimination_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_gender_discrimination_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_gender_discrimination_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_gender_discrimination_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_gender_discrimination_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_discrimination_gender_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <!--****************Section 12 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="11. Discrimination against people with mantel health problem and addiction issue "
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_mantel_health_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_mantel_health_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_mantel_health_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_mantel_health_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_mantel_health_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_mantel_health_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_mantel_health_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_mantel_health_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <!--****************Section 13 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="12. Bribery"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_bribery_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_bribery_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_bribery_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_bribery_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_bribery_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_bribery_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_bribery_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_bribery_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <!--****************Section 14 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="13. Any other"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_any_other_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_any_other_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_any_other_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="whether you get justice"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_any_other_justice_27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_button_any_other_justice_yes_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_button_any_other_justice_no_27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+                android:id="@+id/tv_any_other_justice_no_reason_27"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"/>
+
+            <Spinner
+                android:id="@+id/spinner_any_other_justice_no_reason_27"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+
+            <ImageButton
+                android:id="@+id/save_proceed_4"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/fab_margin"
+                android:onClick="btn_27_submit_function"
+                android:background="@drawable/next" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

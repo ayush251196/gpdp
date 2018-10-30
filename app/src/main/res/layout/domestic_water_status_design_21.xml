@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--****************Section 1 ***************************-->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="1. Source of drinking water"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+            <!--****************Section 2 ***************************-->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="2. Distance of drinking water source"
+
+                />
+            <EditText
+                android:id="@+id/et_ration_card_no_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+
+                android:inputType="numberDecimal" />
+
+
+            <!--****************Section 3 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="3. Ownership of the source of water"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 4 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="4. Quality of drinking water "
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Good" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Poor" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 5 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 6 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="5. Facing problem of drinking water scarcity"
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 7 ***************************-->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="In which months"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 8 ***************************-->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason of water scarcity"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+
+            <ImageButton
+                android:id="@+id/save_proceed_4"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/fab_margin"
+                android:onClick="btn_21_submit_function"
+                android:background="@drawable/next" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

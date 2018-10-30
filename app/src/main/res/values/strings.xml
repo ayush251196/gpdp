@@ -1,0 +1,314 @@
+<resources>
+    <string name="app_name">GPDP</string>
+
+    <string name="qualification_prompt">---SELECT---</string>
+    <string name="blood_prompt">Choose Blood Group</string>
+
+    <string-array name="qualification_arrays">
+
+        <item>Choose Qualification</item>
+        <item>UN EDUCATED</item>
+        <item>5 Pass</item>
+        <item>6 Pass</item>
+        <item>7 Pass</item>
+        <item>8 Pass</item>
+        <item>9 Pass</item>
+        <item>10 Pass</item>
+        <item>Madhyamik</item>
+        <item>Higher Secondary</item>
+        <item>Graduation</item>
+        <item>Master</item>
+        <item>Ph.D</item>
+    </string-array>
+
+
+    <string-array name="occupation_group_arrays">
+        <item>Choose Occupation</item>
+        <item>Government Employee</item>
+        <item>Private Employee</item>
+        <item>Self Employed</item>
+        <item>Agricultural Farmer</item>
+        <item>Horticultural Farmer</item>
+        <item>Commercial Farmer (Rubber / T)</item>
+        <item>Fishery</item>
+        <item>Fisherman</item>
+
+        <item>Potter</item>
+        <item>Cobbler</item>
+        <item>Carpenter</item>
+
+        <item>House servant</item>
+        <item>wage labour</item>
+        <item>Electrician</item>
+        <item>Plumber</item>
+        <item>Construction Labour</item>
+        <item>Others Skilled Labour</item>
+        <item>Driver</item>
+        <item>Rikshaw Puller</item>
+        <item>Beggar</item>
+        <item>Student</item>
+        <item>Un Employed</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="diability_group_arrays">
+        <item>Choose Diability Type</item>
+        <item>vision Impairment</item>
+        <item>Deaf or hard of hearing</item>
+        <item>Mental health conditions</item>
+        <item>Intellectual disability</item>
+        <item>Acquired brain injury</item>
+        <item>Autism spectrum disorder</item>
+        <item>physical disability</item>
+
+    </string-array>
+
+
+    <string-array name="pension_type_group_arrays">
+        <item>Choose Type</item>
+        <item>IGNOAPS (Indira Gandhi National Old Age Pension Scheme)</item>
+        <item>IGNWPS (Indira Gandhi National Widow Pension Scheme </item>
+        <item>IGNDPS (Indira Gandhi National Disable Pension Scheme)</item>
+        <item>State Old Age Pension</item>
+        <item>Widow and Deserted</item>
+        <item>Deserted Women</item>
+        <item>State Widow Pension scheme</item>
+        <item>Pension to Un-married women of the age 45 years and above</item>
+        <item>Blind and Handicap Pension</item>
+        <item>Allowance for 100% Blind</item>
+        <item>Un- Employment Allowance for 100% blind</item>
+        <item>Pension to Persons who lost 100% Eye sight</item>
+        <item>60% Disability</item>
+        <item>Pension to 80% and above Disable</item>
+        <item>Tripura Cobbler</item>
+        <item>Tripura Rickshaw Puller</item>
+        <item>Bidi Shramik</item>
+        <item>Motor Shramik Pension</item>
+        <item>Laundry Workers</item>
+        <item>Barber Workers</item>
+        <item>Handloom Workers</item>
+        <item>Fishermen</item>
+        <item>Social Pension Scheme for Female Domestic Workers</item>
+        <item>Tripura Incentive to Girl Child (BPL)</item>
+        <item>Social Pension Scheme for Person Living with HIV</item>
+        <item>Social Pension Scheme for Transgender</item>
+        <item>Social Pension Scheme for Grade-II Deformed Leprosy Patients</item>
+        <item>Social Pension For Cancer Patients</item>
+        <item>Folk Artistes</item>
+        <item>Carpenter</item>
+        <item>Blacksmith</item>
+        <item>Pottery</item>
+        <item>Schedules Castes traditionally connected with sanitation work (Harijan)</item>
+    </string-array>
+
+
+    <string-array name="pension_reason_group_arrays">
+        <item>Choose Reason</item>
+
+        <item>Politically deprived</item>
+        <item>Lack of Awareness/</item>
+        <item>applied but not get</item>
+        <item>No proper document</item>
+        <item>other</item>
+
+    </string-array>
+
+
+    <string-array name="blood_group_arrays">
+        <item>Choose Blood Group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+
+
+    <string-array name="caste_group_arrays">
+        <item>Choose Option</item>
+        <item>SC</item>
+        <item>ST</item>
+        <item>OBC</item>
+        <item>UR</item>
+        <item>RM</item>
+
+    </string-array>
+
+    <string-array name="religion_group_arrays">
+        <item>Choose Option</item>
+        <item>Hindu</item>
+        <item>Muslim</item>
+        <item>Christian</item>
+        <item>Buddhist</item>
+        <item>Jain</item>
+        <item>Sikh</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="acquired_house_group_arrays">
+        <item>Choose Option</item>
+        <item>Own</item>
+        <item>Rent</item>
+        <item>Other</item>
+
+    </string-array>
+
+    <string-array name="house_type_arrays">
+        <item>Choose Option</item>
+        <item>Kutcha</item>
+        <item>Semi Pucca</item>
+        <item>Pucca</item>
+
+    </string-array>
+
+    <string-array name="secc_arrays">
+        <item>Choose Option</item>
+        <item>Yes</item>
+        <item>No</item>
+        <item>Dont know</item>
+
+    </string-array>
+
+    <string-array name="secc_type_arrays">
+        <item>Choose Option</item>
+        <item>D1</item>
+        <item>D2</item>
+        <item>D3</item>
+        <item>D4</item>
+        <item>D5</item>
+        <item>D6</item>
+        <item>D7</item>
+    </string-array>
+
+    <string-array name="spinner_item_activity_name_4">
+        <item>Choose Activity</item>
+        <item>Items will come from database</item>
+        <!-- Rest are come from databse -->
+
+    </string-array>
+
+    <string-array name="spinner_item_type_of_assistance_4">
+        <item>Choose Assistance Type</item>
+
+        <item>Financial</item>
+        <item>Technical</item>
+        <item>Material</item>
+        <item>others</item>
+        <!-- Rest are come from databse -->
+
+    </string-array>
+
+    <string-array name="spinner_item_loan_source_6">
+        <item>Government</item>
+        <item>Bank </item>
+        <item>finance</item>
+        <item> micro finance</item>
+        <item> money lender</item>
+        <item> relative</item>
+        <item>  others</item>
+    </string-array>
+
+
+    <string-array name="spinner_item_shg_gradation_5">
+        <item>Choose SHG Grade</item>
+        <item>1st Gradation</item>
+        <item>2nd Gradation</item>
+        <item>3rd Gradation</item>
+        <item>No Gradation</item>
+        <!-- Rest are come from databse -->
+
+    </string-array>
+
+
+
+    <string-array name="spinner_item_MGNREGA_difficulty_7">
+        <item>Choose difficulty </item>
+        <item>Delay payment</item>
+        <item>No work available as required</item>
+        <item>No drinking water facility</item>
+        <item>No fast aid facility</item>
+
+        <item>No crash facility</item>
+        <item>Others specify </item>
+
+        <!-- Rest are come from databse -->
+    </string-array>
+
+
+
+    <string-array name="spinner_item_bussiness_problem_8">
+        <item>Choose problem </item>
+        <item>Lack of knowledge and skill</item>
+        <item>Financial problem</item>
+        <item>Lack of technical support</item>
+        <item>Lack of proper business place</item>
+
+        <item>Lack of market facility</item>
+        <item>Lack of transport facility</item>
+        <item>Lack of store house</item>
+        <item>Lack of raw materials</item>
+        <item>Others</item>
+        <!-- Rest are come from databse -->
+    </string-array>
+
+
+    <string-array name="spinner_item_ration_card_type_8">
+        <item>Choose Type </item>
+        <item>APL</item>
+        <item>BPL</item>
+        <item>AdHoc</item>
+        <item>Annapurna</item>
+
+        <item>Antodaya</item>
+        <item>Others</item>
+
+        <!-- Rest are come from databse -->
+    </string-array>
+
+
+
+
+    <string name="title_activity_registration">Registration</string>
+    <string name="tab_text_1">Sec 1</string>
+    <string name="tab_text_2">Sec 2</string>
+    <string name="tab_text_3">Sec 3</string>
+    <string name="tab_text_4">Sec 4</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string name="title_desc_family_2">2. Details of Family Members</string>
+    <string name="title_end_poverty_3">3. End Poverty</string>
+    <string name="title_income_generation_4">4. Income generation Activities</string>
+    <string name="title_shg_5">5. Self Help Group (SHG)</string>
+    <string name="title_loan_status_6">6. Status Of Loan</string>
+
+    <string name="title_mgnrega_7">7. MGNREGA</string>
+    <string name="title_skill_development_8">8. Skill development</string>
+    <string name="title_zero_hunger_9">9. Zero Hunger </string>
+    <string name="title_status_of_enrollment_10">10. Status of enrollment in ICDS </string>
+
+    <string name="title_food_source_11">11. Source of food </string>
+    <string name="title_agriculture_issues_12">12. Agriculture related issues </string>
+    <string name="title_Irrigation_facility_13">13. Irrigation Facility </string>
+    <string name="title_agricultural_facility_14">14. Agricultural facility </string>
+    <string name="title_good_health_15">15. Good health and well-being </string>
+    <string name="title_health_status_16">16. Family health status of last one year  </string>
+    <string name="title_quality_education_17">17. Quality Education  </string>
+    <string name="title_gender_equality_18">18. Gender equality  </string>
+    <string name="title_women_empowerment_19">19. Women empowerment status in the family  </string>
+    <string name="title_drinking_water_status_20">20. Drinking water status </string>
+    <string name="title_domestic_water_status_21">21. Domestic water status </string>
+    <string name="title_toilet_facility_design_22">22. Status of Toilet facility </string>
+    <string name="title_affordable_clean_energy_23">23. Affordable and clean Energy </string>
+    <string name="title_climate_action_24">24. Climate Action Protected condition</string>
+    <string name="title_disaster_protected_center_25">25. Status of Disaster Protected Center</string>
+    <string name="title_life_below_water_26">26. Life below water </string>
+    <string name="title_peace_justice_institution_27">27. Peace, Justice and Strong Institutions</string>
+
+</resources>

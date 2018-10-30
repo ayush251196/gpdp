@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--****************Section 1 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="1. Do you have any Pond / Lake"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+
+            <!--****************Section 2 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="2. Whether it has been excavated under any government scheme"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <!--****************Section 3 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="3. Whether Pond / Lake hold water round the year"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 4 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_normal_2"
+                android:gravity="left"
+                android:text="Whether it is used for the following"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 3 ***************************-->
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="a. Fishery"/>
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="b. Drinking"/>
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="c. Domestic Workg"/>
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="d. Irrigation"/>
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="e. Social Programme"/>
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+
+
+
+            <!--****************Section 4 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="4. Effected by flood"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+            <!--****************Section 5 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="5. Solid/Liquid wastes are dumped"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 6 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="6. Whether Pond / Lake required re-excavation"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 7 ***************************-->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:background="@color/malay_color_green"
+                android:gravity="left"
+                android:text="7. Any other requirements for the improvement of the Pond / Lake"
+                android:textColor="#ffffff"
+                />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <ImageButton
+                android:id="@+id/save_proceed_4"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/fab_margin"
+                android:onClick="btn_26_submit_function"
+                android:background="@drawable/next" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--****************Section 1 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="1. Whether the family has toilet"
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <!--****************Section 2 ***************************-->
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Type of toilet"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 3 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="2. Whether using the toilet regularly"
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 3 ***************************-->
+
+
+
+            <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:gravity="left"
+            android:text="Reason"
+
+            />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 4 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text=" Required Maintenance"
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 5 ***************************-->
+
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Toilet generated by "
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 6 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Frequency of toilet cleaning in a month"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 7 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Availability of water at toilet"
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 8 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Availability of soap at toilet "
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 9 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Whether using the    soap regularly  "
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 10 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Reason"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 11 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Family member facing problem of un availability of toilet facility at public places under the Panchayat Area."
+
+                />
+
+            <RadioGroup
+                android:id="@+id/radio_has_ration_card_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_yes_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/radio_has_ration_card_no_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 12 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Mention the places"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+            <!--****************Section 13 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Where do you discharge the solid waste of your family"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+            <!--****************Section 14 ***************************-->
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:gravity="left"
+                android:text="Where do you discharge the liquid waste of your family"
+
+                />
+            <Spinner
+                android:id="@+id/spinner_ration_card_type_9"
+                style="@android:style/Widget.Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+
+                android:background="@android:color/transparent"
+                android:entries="@array/spinner_item_ration_card_type_8" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#4E4D4C" />
+
+
+
+            <ImageButton
+                android:id="@+id/save_proceed_4"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/fab_margin"
+                android:onClick="btn_22_submit_function"
+                android:background="@drawable/next" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.project.hci_lab">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/gpdp_logo"
+        android:roundIcon="@drawable/gpdp_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="GPDP Survey" />
+        <activity android:name=".Display_info" />
+        <activity
+            android:name=".Registration"
+            android:label="@string/title_activity_registration"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".QR_ScanActivity" />
+        <activity android:name=".Update" />
+        <activity android:name=".video_activity" />
+        <activity android:name=".circle_menu" />
+        <activity android:name=".basic_info" />
+        <activity
+            android:name=".desc_family_2"
+            android:label="@string/title_desc_family_2">
+
+        </activity>
+        <activity
+            android:name=".end_poverty_3"
+            android:label="@string/title_end_poverty_3" />
+        <activity
+            android:name=".income_generation_4"
+            android:label="@string/title_income_generation_4" />
+        <activity
+            android:name=".shg_5"
+            android:label="@string/title_shg_5" />
+        <activity
+            android:name=".loan_status_6"
+            android:label="@string/title_loan_status_6" />
+        <activity
+            android:name=".mgnrega_7"
+            android:label="@string/title_mgnrega_7" />
+        <activity
+            android:name=".skill_development_8"
+            android:label="@string/title_skill_development_8" />
+        <activity
+            android:name=".zero_hunger_9"
+            android:label="@string/title_zero_hunger_9" />
+        <activity
+            android:name=".status_icds_10"
+            android:label="@string/title_status_of_enrollment_10" />
+
+        <activity android:name=".food_source_11" android:label="@string/title_food_source_11"/>
+        <activity android:name=".agriculture_issues_12" android:label="@string/title_agriculture_issues_12"/>
+        <activity android:name=".irrigation_facility_13" android:label="@string/title_Irrigation_facility_13"/>
+        <activity android:name=".good_health_15" android:label="@string/title_good_health_15"/>
+        <activity android:name=".health_status_16" android:label="@string/title_health_status_16"/>
+        <activity android:name=".quality_education_17" android:label="@string/title_quality_education_17"/>
+        <activity android:name=".gender_equality_18" android:label="@string/title_gender_equality_18"/>
+        <activity android:name=".women_empowerment_19" android:label="@string/title_women_empowerment_19"/>
+        <activity android:name=".drinking_water_status_20" android:label="@string/title_drinking_water_status_20"/>
+        <activity android:name=".domestic_water_status_21" android:label="@string/title_domestic_water_status_21"/>
+        <activity android:name=".toilet_facility_22" android:label="@string/title_toilet_facility_design_22"/>
+        <activity android:name=".affordable_clean_energy_23" android:label="@string/title_affordable_clean_energy_23"/>
+        <activity android:name=".climate_action_24" android:label="@string/title_climate_action_24"/>
+        <activity android:name=".disaster_protected_center_25" android:label="@string/title_disaster_protected_center_25"/>
+        <activity android:name=".life_below_water_26" android:label="@string/title_life_below_water_26">
+
+
+            </activity>
+        <activity android:name=".peace_justice_institution_27" android:label="@string/title_peace_justice_institution_27">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".agricultural_facility_14"
+            android:label="@string/title_agricultural_facility_14" ></activity>
+    </application>
+
+</manifest>
