@@ -25,7 +25,16 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="GPDP Survey" />
+            android:label="GPDP Survey" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+
+        </activity>
+
+
         <activity android:name=".Display_info" />
         <activity
             android:name=".Registration"
@@ -35,7 +44,13 @@
         <activity android:name=".Update" />
         <activity android:name=".video_activity" />
         <activity android:name=".circle_menu" />
-        <activity android:name=".basic_info" />
+        <activity android:name=".basic_info">
+
+
+
+
+    </activity>
+
         <activity
             android:name=".desc_family_2"
             android:label="@string/title_desc_family_2">
@@ -82,15 +97,9 @@
         <activity android:name=".disaster_protected_center_25" android:label="@string/title_disaster_protected_center_25"/>
         <activity android:name=".life_below_water_26" android:label="@string/title_life_below_water_26">
 
-
             </activity>
         <activity android:name=".peace_justice_institution_27" android:label="@string/title_peace_justice_institution_27">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 

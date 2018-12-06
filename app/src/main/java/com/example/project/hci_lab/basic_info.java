@@ -3,19 +3,29 @@ package com.example.project.hci_lab;
 import android.Manifest;
 import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Surface;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -23,6 +33,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -38,11 +49,15 @@ import com.google.android.gms.vision.barcode.Barcode;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
-public class basic_info extends AppCompatActivity implements NumberPicker.OnValueChangeListener,AdapterView.OnItemSelectedListener{
+public class basic_info extends AppCompatActivity implements NumberPicker.OnValueChangeListener,AdapterView.OnItemSelectedListener,My_dialog_fragment.data_exchanger{
 
     private ImageButton ben_image;
+    private CoordinatorLayout coordinatorLayout;
+    private Snackbar snackbar;
     final int permission_all=11;
     String permissions[]={Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.CAMERA};
     public static final int MY_PERMISSION_CAMERA=100;
@@ -50,6 +65,10 @@ public class basic_info extends AppCompatActivity implements NumberPicker.OnValu
     public static final int qr_request_code=100;
     public static final int qr_result_code=200;
     private  LinearLayout linearLayout;
+    private SQLiteDatabase sqLiteDatabase;
+    private Mydatabase mydatabase;
+    private String bend_image_dir;
+    public Uri ben_image_uri;
     EditText editText_name,editText_age,editText_Hamlet,editText_ward,editText_male_number,
             editText_female_number,editText_transgender_number,
             editText_beneficiary_code,editText_gp_vc_name, editText_district,editText_subdivision,editText_block;
@@ -78,7 +97,7 @@ public class basic_info extends AppCompatActivity implements NumberPicker.OnValu
 
     String Name_Holder,Age_Holder,Hamlet_Holder,Ward_Holder,Male_number_Holder,Female_number_Holder,Transgender_number_Holder,
             Caste_Holder,Religion_Holder,acquired_house_Holder,house_type_Holder,secc_Holder,secc_type_Holder,gender_Holder="Male",
-    District_Holder,Subdivision_Holder,Block_Holder,GP_Holder,GP_VC_Type_Holder,bi_Surveyor_Holder,house_holde_code_Holder,bi_server_response;
+    District_Holder,Subdivision_Holder,Block_Holder,GP_Holder,GP_VC_Type_Holder,bi_Surveyor_Holder,house_holde_code_Holder,bi_server_response,ben_code;
 
 
 
@@ -90,6 +109,10 @@ public class basic_info extends AppCompatActivity implements NumberPicker.OnValu
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    public void  set_ben_image_uri(Uri uri){
+        this.ben_image_uri=uri;
     }
 
     @Override
@@ -123,6 +146,7 @@ public boolean has_Permission(Context context, String permissions[]){
 
 public void intialization_tools()
 {   ben_image=findViewById( R.id.ben_image );
+    coordinatorLayout=(CoordinatorLayout)findViewById(R.id.coor_id);
     Drawable drawable=getResources().getDrawable( R.drawable.ben_image );
     ben_image.setBackground( drawable );
     qr_scan=findViewById( R.id.btn_qr_code );
@@ -170,14 +194,13 @@ public void intialization_tools()
     public void GetValueFromEditText(){
         // Toast.makeText(Registration.this, "Start button....", Toast.LENGTH_LONG).show();
         Name_Holder = editText_name.getText().toString().trim();
+        ben_code=editText_beneficiary_code.getText().toString().trim();
         Age_Holder= editText_age.getText().toString().trim();
         Hamlet_Holder = editText_Hamlet.getText().toString().trim();
         Ward_Holder = editText_ward.getText().toString().trim();
         Male_number_Holder = editText_male_number.getText().toString().trim();
         Female_number_Holder= editText_female_number.getText().toString().trim();
         Transgender_number_Holder = editText_transgender_number.getText().toString().trim();
-        house_holde_code_Holder=editText_beneficiary_code.getText().toString().trim();
-
         District_Holder=editText_district.getText().toString().trim();
         Subdivision_Holder=editText_subdivision.getText().toString().trim();
         Block_Holder=editText_block.getText().toString().trim();
@@ -216,7 +239,7 @@ public void intialization_tools()
         setContentView(R.layout.design_basic_info );
 
         intialization_tools();
-
+        mydatabase=new Mydatabase(this);
         bi_server_response=getIntent().getStringExtra("cm_server_response");
 
         // $send_self_image."#".$send_name."#".$send_code."#".$send_district."#".$send_subdivision."#".$send_block."#".$send_gp_vc_name."#".$send_gp_vc_type;
@@ -351,138 +374,204 @@ public void intialization_tools()
 
         //FloatingActionButton btn_save_proceed = (FloatingActionButton) findViewById( R.id.save_proceed );
         btn_save_proceed.setOnClickListener( new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-
-                GetValueFromEditText();
-
-
-                if(empty_checker()==true) {
-
-                    progressDialog.setMessage( "Please Wait, We are Inserting Your Data on Server" );
-                    progressDialog.show();
-
-
-
-                  //  Toast.makeText(getBaseContext(), "success 11.....", Toast.LENGTH_SHORT).show();
-
-                 /*   String s=Name_Holder+".."+Age_Holder+".."+Hamlet_Holder+".."+Ward_Holder+".."+Male_number_Holder+".."+Female_number_Holder+".."
-                            +Transgender_number_Holder+".."+Caste_Holder+".."+Religion_Holder+".."+acquired_house_Holder+".."+house_type_Holder+".."+
-                            secc_Holder+".."+secc_type_Holder+".."+gender_Holder+".."+District_Holder+".."+Subdivision_Holder+".."+Block_Holder+".."+GP_Holder+".."+GP_VC_Type_Holder
-                            +bi_Surveyor_Holder+".."+house_holde_code_Holder+"..";
-
-
-                   Toast.makeText(getBaseContext(), s, Toast.LENGTH_SHORT).show();
-
-                   */
-                    My_dialog_fragment my_dialog_fragment=new My_dialog_fragment();
-                    Drawable drawable=ben_image.getDrawable();
-                    Bitmap bitmap=((BitmapDrawable)drawable).getBitmap();
-                    my_dialog_fragment.uploadBitmap(bitmap,getApplicationContext(),house_holde_code_Holder);
-
-                    StringRequest stringRequest = new StringRequest( Request.Method.POST, HttpUrl,
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String ServerResponse) {
-
-                                    // Hiding the progress dialog after all task complete.
-                                    progressDialog.dismiss();
-                                   // Toast.makeText(getBaseContext(), "success 10.....", Toast.LENGTH_SHORT).show();
-
-                                    // Showing response message coming from server.
-                                    Toast.makeText( basic_info.this, ServerResponse, Toast.LENGTH_LONG ).show();
-                                    reseter();
-
-                                    Intent i = new Intent(basic_info.this,desc_family_2.class);
-                                    //i.putExtra("server_response", ServerResponse.trim());
-                                    startActivity(i);
-                                }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError volleyError) {
-
-                                    // Hiding the progress dialog after all task complete.
-                                    progressDialog.dismiss();
-
-                                    // Showing error message if something goes wrong.
-                                    Toast.makeText( basic_info.this, volleyError.toString(), Toast.LENGTH_LONG ).show();
-
-                                }
-                            } ) {
-                        @Override
-                        protected Map<String, String> getParams() {
-
-                            // Creating Map String Params.
-                            Map<String, String> params = new HashMap<String, String>();
-
-                            // Adding All values to Params.
-                            params.put( "head_name_sender", Name_Holder );
-                            params.put( "age_sender", Age_Holder );
-                            params.put( "hamlet_sender", Hamlet_Holder );
-                            params.put( "ward_sender", Ward_Holder );
-                            params.put( "male_sender", Male_number_Holder );
-                            params.put( "female_sender", Female_number_Holder );
-                            params.put( "transgender_sender", Transgender_number_Holder );
-                            params.put( "caste_sender", Caste_Holder );
-                            params.put( "religion_sender", Religion_Holder );
-                            params.put( "ownership_of_house_sender", acquired_house_Holder );
-                            params.put( "house_type_sender", house_type_Holder );
-                            params.put( "secc_sender", secc_Holder );
-                            params.put( "secc_type_sender", secc_type_Holder );
-                            params.put( "gender_sender", gender_Holder );
+                if(check_data_presence()){
+                    Log.i("log","update--");
+                    GetValueFromEditText();
+                    sqLiteDatabase=mydatabase.getWritableDatabase();
+                    ContentValues contentValues=new ContentValues();
+                    contentValues.put("family_head_name",Name_Holder);
+                    contentValues.put("age",Age_Holder);
+                    contentValues.put("block_name",Block_Holder);
+                    contentValues.put("gp_vc_name",GP_Holder);
+                    contentValues.put("hamlet_name",Hamlet_Holder);
+                    contentValues.put("ward_num",Ward_Holder);
+                    contentValues.put("male_num",Male_number_Holder);
+                    contentValues.put("female_num",Female_number_Holder);
+                    contentValues.put("transgender_num",Transgender_number_Holder);
+                    contentValues.put("caste",Caste_Holder);
+                    contentValues.put("ownership_of_house",acquired_house_Holder);
+                    contentValues.put("house_type",house_type_Holder);
+                    contentValues.put("list_under_secc",secc_Holder);
+                    contentValues.put("type_of_secc",secc_type_Holder);
+                    contentValues.put("ben_code",ben_code);
+                    contentValues.put("gender",gender_Holder);
+                    contentValues.put("district",District_Holder);
+                    contentValues.put("subdivision",Subdivision_Holder);
+                    contentValues.put("gp_vc_type",GP_VC_Type_Holder);
+                    contentValues.put("religion",Religion_Holder);
+                    contentValues.put("surveyor_id",bi_Surveyor_Holder);
+                    contentValues.put("ben_image","df");
+                    String where="ben_code=?";
+                    String args[]=new String[1];
+                    args[0]=ben_code;
+                    sqLiteDatabase.update("gpdp_basic_info",contentValues,where,args);
+                    show();
+                    snackbar.make(coordinatorLayout,"Successfully Updated!",1000).show();
 
 
-                            params.put( "district_sender", District_Holder );
-                            params.put( "subdivision_sender", Subdivision_Holder );
-                            params.put( "block_sender", Block_Holder );
-                            params.put( "gp_sender", GP_Holder );
-                            params.put( "gp_vc_type_sender", GP_VC_Type_Holder );
-                            params.put( "surveyor_sender", bi_Surveyor_Holder );
-                            params.put( "house_holde_code_sender",house_holde_code_Holder );
+                }else {
+                    Log.i("log ","insert---");
+                    GetValueFromEditText();
+                    sqLiteDatabase = mydatabase.getWritableDatabase();
+                    if (empty_checker()!=true) {
 
-
-                            // String uploadImage = getStringImage();
-                            //  params.put("image",uploadImage );
-                            return params;
+//                    //  Toast.makeText(getBaseContext(), "success 11.....", Toast.LENGTH_SHORT).show();
+//
+//                 /*   String s=Name_Holder+".."+Age_Holder+".."+Hamlet_Holder+".."+Ward_Holder+".."+Male_number_Holder+".."+Female_number_Holder+".."
+//                            +Transgender_number_Holder+".."+Caste_Holder+".."+Religion_Holder+".."+acquired_house_Holder+".."+house_type_Holder+".."+
+//                            secc_Holder+".."+secc_type_Holder+".."+gender_Holder+".."+District_Holder+".."+Subdivision_Holder+".."+Block_Holder+".."+GP_Holder+".."+GP_VC_Type_Holder
+//                            +bi_Surveyor_Holder+".."+house_holde_code_Holder+"..";
+//
+//
+//                   Toast.makeText(getBaseContext(), s, Toast.LENGTH_SHORT).show();
+//
+//
+                        ContentValues contentValues = new ContentValues();
+                        contentValues.put("family_head_name", Name_Holder);
+                        contentValues.put("age", Age_Holder);
+                        contentValues.put("block_name", Block_Holder);
+                        contentValues.put("gp_vc_name", GP_Holder);
+                        contentValues.put("hamlet_name", Hamlet_Holder);
+                        contentValues.put("ward_num", Ward_Holder);
+                        contentValues.put("male_num", Male_number_Holder);
+                        contentValues.put("female_num", Female_number_Holder);
+                        contentValues.put("transgender_num", Transgender_number_Holder);
+                        contentValues.put("caste", Caste_Holder);
+                        contentValues.put("ownership_of_house", acquired_house_Holder);
+                        contentValues.put("house_type", house_type_Holder);
+                        contentValues.put("list_under_secc", secc_Holder);
+                        contentValues.put("type_of_secc", secc_type_Holder);
+                        contentValues.put("ben_code", ben_code);
+                        contentValues.put("gender", gender_Holder);
+                        contentValues.put("district", District_Holder);
+                        contentValues.put("subdivision", Subdivision_Holder);
+                        contentValues.put("gp_vc_type", GP_VC_Type_Holder);
+                        contentValues.put("religion", Religion_Holder);
+                        contentValues.put("surveyor_id", bi_Surveyor_Holder);
+                        contentValues.put("ben_image",ben_image_uri.toString());
+                        try {
+                            sqLiteDatabase.insertOrThrow("gpdp_basic_info", null, contentValues);
+                            show();
+                            snackbar.make(coordinatorLayout,"Details added successfully!",1000).show();
+                        }catch (SQLiteConstraintException e){
+                            Toast.makeText(getApplicationContext(),"Please enter correctly!",Toast.LENGTH_SHORT).show();
                         }
+//                    }catch (SQLiteConstraintException e){
+//                        Toast.makeText(getApplicationContext(),"Please fill all details!",Toast.LENGTH_LONG).show();
+//                    }
 
-                    };
-
-                    // Creating RequestQueue.
-                    RequestQueue requestQueue = Volley.newRequestQueue( basic_info.this );
-
-                    // Adding the StringRequest object into requestQueue.
-                    requestQueue.add( stringRequest );
-
+//                    Log.i("ben image uri--",ben_image_uri.toString());
+//                    My_dialog_fragment my_dialog_fragment = new My_dialog_fragment();
+//                    Drawable drawable = ben_image.getDrawable();
+//                    Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+//                    my_dialog_fragment.uploadBitmap(bitmap, getApplicationContext(), house_holde_code_Holder);
+//
+//                    StringRequest stringRequest = new StringRequest( Request.Method.POST, HttpUrl,
+//                            new Response.Listener<String>() {
+//                                @Override
+//                                public void onResponse(String ServerResponse) {
+//
+//                                    // Hiding the progress dialog after all task complete.
+//                                    progressDialog.dismiss();
+//                                   // Toast.makeText(getBaseContext(), "success 10.....", Toast.LENGTH_SHORT).show();
+//
+//                                    // Showing response message coming from server.
+//                                    Toast.makeText( basic_info.this, ServerResponse, Toast.LENGTH_LONG ).show();
+//                                    reseter();
+//
+//                                    Intent i = new Intent(basic_info.this,desc_family_2.class);
+//                                    //i.putExtra("server_response", ServerResponse.trim());
+//                                    startActivity(i);
+//                                }
+//                            },
+//                            new Response.ErrorListener() {
+//                                @Override
+//                                public void onErrorResponse(VolleyError volleyError) {
+//
+//                                    // Hiding the progress dialog after all task complete.
+//                                    progressDialog.dismiss();
+//
+//                                    // Showing error message if something goes wrong.
+//                                    Toast.makeText( basic_info.this, volleyError.toString(), Toast.LENGTH_LONG ).show();
+//
+//                                }
+//                             }
+//                             )
+//                    {
+//                        @Override
+//                        protected Map<String, String> getParams() {
+//
+//                            // Creating Map String Params.
+//                            Map<String, String> params = new HashMap<String, String>();
+//
+//                            // Adding All values to Params.
+//                            params.put( "head_name_sender", Name_Holder );
+//                            params.put( "age_sender", Age_Holder );
+//                            params.put( "hamlet_sender", Hamlet_Holder );
+//                            params.put( "ward_sender", Ward_Holder );
+//                            params.put( "male_sender", Male_number_Holder );
+//                            params.put( "female_sender", Female_number_Holder );
+//                            params.put( "transgender_sender", Transgender_number_Holder );
+//                            params.put( "caste_sender", Caste_Holder );
+//                            params.put( "religion_sender", Religion_Holder );
+//                            params.put( "ownership_of_house_sender", acquired_house_Holder );
+//                            params.put( "house_type_sender", house_type_Holder );
+//                            params.put( "secc_sender", secc_Holder );
+//                            params.put( "secc_type_sender", secc_type_Holder );
+//                            params.put( "gender_sender", gender_Holder );
+//
+//
+//                            params.put( "district_sender", District_Holder );
+//                            params.put( "subdivision_sender", Subdivision_Holder );
+//                            params.put( "block_sender", Block_Holder );
+//                            params.put( "gp_sender", GP_Holder );
+//                            params.put( "gp_vc_type_sender", GP_VC_Type_Holder );
+//                            params.put( "surveyor_sender", bi_Surveyor_Holder );
+//                            params.put( "house_holde_code_sender",house_holde_code_Holder );
+//
+//
+                        // String uploadImage = getStringImage();
+//                            //  params.put("image",uploadImage );
+//                            return params;
+//                        }
+//
+//                    };
+//
+//                    // Creating RequestQueue.
+//                    RequestQueue requestQueue = Volley.newRequestQueue( basic_info.this );
+//
+//                    // Adding the StringRequest object into requestQueue.
+//                    requestQueue.add( stringRequest );
+//
+//                }
+                    }else{
+                        Toast.makeText(getApplicationContext(),"Some details missing!",Toast.LENGTH_SHORT).show();
+                    }
                 }
-
             }
         } );
-
-
-
-
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.i("called","onActivityResult========");
-        if(requestCode==qr_request_code && resultCode==RESULT_OK){
-            if(data!=null){
-                final Barcode barcode=data.getParcelableExtra( "barcode" );
-                editText_beneficiary_code.post( new Runnable() {
-                    @Override
-                    public void run() {
-                        editText_beneficiary_code.setText( barcode.displayValue );
-                    }
-                } );
-
-            }
-
-        }
-    }
-
+//    public static String getPath( Context context, Uri uri ) {
+//
+//        String result = null;
+//        String[] proj = { MediaStore.Images.Media.DATA };
+//        Cursor cursor = context.getContentResolver( ).query( uri, proj, null, null, null );
+//        if(cursor != null){
+//            if ( cursor.moveToFirst( ) ) {
+//                int column_index = cursor.getColumnIndexOrThrow( proj[0] );
+//                result = cursor.getString( column_index );
+//            }
+//            cursor.close( );
+//        }
+//        if(result == null) {
+//            result = "Not found";
+//        }
+//        return result;
+//    }
 
     public boolean empty_checker()
     {
@@ -524,17 +613,46 @@ public void intialization_tools()
 //
 //
 
-
-        if(empty_checker_counter==0)
-        {
+        if(Name_Holder=="" || Age_Holder=="" ||Block_Holder=="" || GP_Holder=="" || Hamlet_Holder==""|| Ward_Holder==""
+                ||Male_number_Holder==""||Female_number_Holder==""||Transgender_number_Holder==""||Caste_Holder==""||acquired_house_Holder==""
+                ||house_type_Holder==""||secc_type_Holder==""||secc_Holder==""||gender_Holder==""||ben_code==""||District_Holder==""||Subdivision_Holder==""
+                ||GP_VC_Type_Holder==""||Religion_Holder==""||bi_Surveyor_Holder==""||ben_image_uri==null){
             return true;
         }
-        else
-        {
-            Toast.makeText(basic_info.this, empty_checker_message, Toast.LENGTH_LONG).show();
-            return false;
+        return false;
+    }
+
+    public boolean check_data_presence(){
+        SQLiteDatabase sqLiteDatabase=mydatabase.getReadableDatabase();
+        String ben_code=editText_beneficiary_code.getText().toString();
+        String args[]=new String[1];
+        args[0]=ben_code;
+        Cursor cursor=sqLiteDatabase.rawQuery("select ben_code from gpdp_basic_info where ben_code=?",args);
+        boolean exist=cursor.moveToFirst();
+
+        Log.i("lsdf",String.valueOf(exist));
+        return exist;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i("called","onActivityResult========");
+        if(requestCode==qr_request_code && resultCode==RESULT_OK){
+            if(data!=null){
+                final Barcode barcode=data.getParcelableExtra( "barcode" );
+                editText_beneficiary_code.post( new Runnable() {
+                    @Override
+                    public void run() {
+                        editText_beneficiary_code.setText( barcode.displayValue );
+                    }
+                } );
+
+            }
+
         }
     }
+
+
 
     public void reseter()
     {
@@ -568,6 +686,47 @@ public void intialization_tools()
         newFragment.show( getFragmentManager(), "time picker" );
 
 
+    }
+    public void show(){
+        sqLiteDatabase=mydatabase.getReadableDatabase();
+        Cursor c=sqLiteDatabase.rawQuery("select * from gpdp_basic_info",null);
+
+        while(c!=null && c.moveToNext()){
+            Name_Holder=c.getString(c.getColumnIndex("family_head_name"));
+            Age_Holder=c.getString(c.getColumnIndex("age"));
+            Block_Holder=c.getString(c.getColumnIndex("block_name"));
+            GP_Holder=c.getString(c.getColumnIndex("gp_vc_name"));
+            Hamlet_Holder=c.getString(c.getColumnIndex("hamlet_name"));
+            Ward_Holder=c.getString(c.getColumnIndex("ward_num"));
+            Male_number_Holder=c.getString(c.getColumnIndex("male_num"));
+            Female_number_Holder=c.getString(c.getColumnIndex("female_num"));
+            ben_code=c.getString(c.getColumnIndex("ben_code"));
+            Transgender_number_Holder=c.getString(c.getColumnIndex("transgender_num"));
+            Caste_Holder=c.getString(c.getColumnIndex("caste"));
+            acquired_house_Holder=c.getString(c.getColumnIndex("ownership_of_house"));
+            house_type_Holder=c.getString(c.getColumnIndex("house_type"));
+            secc_Holder=c.getString(c.getColumnIndex("list_under_secc"));
+            gender_Holder=c.getString(c.getColumnIndex("gender"));
+            secc_type_Holder=c.getString(c.getColumnIndex("type_of_secc"));
+            District_Holder=c.getString(c.getColumnIndex("district"));
+            Subdivision_Holder=c.getString(c.getColumnIndex("subdivision"));
+            GP_VC_Type_Holder=c.getString(c.getColumnIndex("gp_vc_type"));
+            Religion_Holder=c.getString(c.getColumnIndex("religion"));
+            bi_Surveyor_Holder=c.getString(c.getColumnIndex("surveyor_id"));
+            String res=ben_code+" "+Name_Holder+" "+gender_Holder+" "+Age_Holder+" "+
+                    Hamlet_Holder+" "+Ward_Holder+" "+Male_number_Holder+" "+Female_number_Holder+" "+Transgender_number_Holder+
+                    " "+District_Holder+" "+Subdivision_Holder+" "+Block_Holder+" "+GP_VC_Type_Holder+" "+GP_Holder+
+                    " "+Caste_Holder+" "+Religion_Holder+" "+acquired_house_Holder+" "+house_type_Holder+" "+secc_Holder+
+                    " "+secc_type_Holder+" "+ben_image_uri.toString()+" "+bi_Surveyor_Holder;
+            Log.i("show-------",res);
+
+        }
+        c.close();
+    }
+
+    @Override
+    public void someListener(Uri selectedImageUri) {
+        ben_image_uri=selectedImageUri;
     }
 //    public void qr_codeMethod(View view){
 //    Log.i("tag===========","qr_codeMethod");

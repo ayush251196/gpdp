@@ -4,6 +4,7 @@ package com.example.project.hci_lab;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -62,39 +63,65 @@ public class My_dialog_fragment extends DialogFragment {
     private Context context;
     private final String UPLOAD_URL = "http://nakshakantha.com/apis/beneficiary_image_uploader.php";
 
+    public interface data_exchanger{
+        void someListener(Uri selectedImageUri);
+
+    }
+    data_exchanger d;
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            selectedImage = (Bitmap) data.getExtras().get("data");
+
+            Uri uri=data.getData();
+            Log.i("camera_uri",uri.toString());
+           // selectedImage = (Bitmap) data.getExtras().get("data");
+            try {
+                selectedImage = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(),data.getData());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 //            imageView.setImageBitmap(selectedImage);
             ben_image.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.malay_color_white));
             ben_image.setImageBitmap(selectedImage);
             Drawable drawable=new BitmapDrawable( getResources(),selectedImage );
             ben_image.setBackground( drawable);
+            d.someListener(uri);
             getDialog().dismiss();
             //uploadBitmap(selectedImage);
         } else if (requestCode == RESULT_LOAD_IMAG && resultCode == Activity.RESULT_OK && data != null) {
             // try{
             final Uri imageUri = data.getData();
+
+            Log.i("ben image uri",imageUri.toString());
             try {
                 selectedImage = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), imageUri);
             } catch (IOException e) {
                 Toast.makeText(getActivity(), "You haven't pick any Image", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
-            Log.i("imageUri", imageUri.toString());
+
             //  final InputStream imageStream=getContentResolver().openInputStream(imageUri);
             //   selectedImage= BitmapFactory.decodeStream(imageStream);
             //imageView.setImageBitmap(selectedImage);
             ben_image.setImageBitmap(selectedImage);
             Drawable drawable=new BitmapDrawable(getResources(),selectedImage );
             ben_image.setBackground( drawable);
+            d.someListener(imageUri);
             getDialog().dismiss();
            // activityview.setImageBitmap(selectedImage);
         }
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            d = (data_exchanger) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement onSomeEventListener");
+        }
+    }
     public void uploadBitmap(Bitmap bitmap,Context context,final String ben_code) {
 //        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
 //        progressDialog.setMessage("Uploading ,please wait...");
@@ -165,6 +192,7 @@ public class My_dialog_fragment extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

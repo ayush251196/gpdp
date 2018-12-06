@@ -1,15 +1,14 @@
-
-
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coor_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:background="@drawable/gpdp_background"
 
     android:orientation="vertical"
-    android:background="@drawable/gpdp_background"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
     tools:context="com.example.project.hci_lab.basic_info">
 
 
@@ -82,7 +81,8 @@
                     android:id="@+id/tv_beneficiary_code"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Beneficiary Code " />
+                    android:text="Beneficiary Code "
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -99,15 +99,18 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint=""
-                        android:inputType="textPersonName" />
+                        android:inputType="textPersonName"
+                        android:textStyle="bold" />
 
                     <Button
                         android:id="@+id/btn_qr_code"
                         android:layout_width="108dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_weight="1"
-                        android:text="Scan" />
+                        android:layout_height="38dp"
+                        android:background="@android:color/background_light"
+                        android:text="Scan"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -116,7 +119,8 @@
                     android:id="@+id/tv_name_head_of_family"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Name of Head of family " />
+                    android:text="Name of Head of family "
+                    android:textStyle="bold" />
 
                 <EditText
 
@@ -127,13 +131,15 @@
                     android:ems="10"
                     android:gravity="left"
                     android:hint=""
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_gender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Gender " />
+                    android:text="Gender "
+                    android:textStyle="bold" />
 
 
                 <RadioGroup
@@ -174,7 +180,8 @@
                     android:id="@+id/tv_age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Age " />
+                    android:text="Age "
+                    android:textStyle="bold" />
 
                 <EditText
 
@@ -186,14 +193,16 @@
                     android:gravity="left"
                     android:hint=""
                     android:inputType="text|number"
-                    android:onClick="showNumberPicker" />
+                    android:onClick="showNumberPicker"
+                    android:textStyle="bold" />
 
 
                 <TextView
                     android:id="@+id/tv_hamlet"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Name of the Hamlet " />
+                    android:text="Name of the Hamlet "
+                    android:textStyle="bold" />
 
                 <EditText
 
@@ -204,14 +213,16 @@
                     android:ems="10"
                     android:gravity="left"
                     android:hint=""
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textStyle="bold" />
 
 
                 <TextView
                     android:id="@+id/tv_ward"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Wrad number" />
+                    android:text="Wrad number"
+                    android:textStyle="bold" />
 
                 <EditText
 
@@ -222,14 +233,16 @@
                     android:ems="10"
                     android:gravity="left"
                     android:hint=""
-                    android:inputType="text|number" />
+                    android:inputType="text|number"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_total_family_member"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="10dp"
-                    android:text="Total Family Members " />
+                    android:text="Total Family Members "
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -246,7 +259,8 @@
                         android:gravity="left"
                         android:lines="1"
                         android:text=" Male "
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -254,7 +268,8 @@
                         android:gravity="center"
                         android:lines="1"
                         android:text=" Female "
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -264,7 +279,8 @@
                         android:gravity="right"
                         android:lines="1"
                         android:text=" Trans gender "
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -282,7 +298,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:imeOptions="actionSend"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/editText_female_number"
@@ -291,7 +308,8 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:imeOptions="actionSend"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/editText_transgender_number"
@@ -301,7 +319,8 @@
                         android:gravity="center"
                         android:imeOptions="actionSend"
                         android:inputType="number"
-                        android:text="0" />
+                        android:text="0"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -309,7 +328,8 @@
                     android:id="@+id/tv_district"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="District " />
+                    android:text="District "
+                    android:textStyle="bold" />
 
                 <EditText
 
@@ -322,13 +342,15 @@
                     android:gravity="left"
                     android:hint=""
                     android:inputType="none"
-                    android:textIsSelectable="true" />
+                    android:textIsSelectable="true"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_subdivision"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Subdivision " />
+                    android:text="Subdivision "
+                    android:textStyle="bold" />
 
                 <EditText
 
@@ -341,13 +363,15 @@
                     android:gravity="left"
                     android:hint=""
                     android:inputType="none"
-                    android:textIsSelectable="true" />
+                    android:textIsSelectable="true"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_block"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Block " />
+                    android:text="Block "
+                    android:textStyle="bold" />
 
                 <EditText
 
@@ -360,13 +384,15 @@
                     android:gravity="left"
                     android:hint=""
                     android:inputType="none"
-                    android:textIsSelectable="true" />
+                    android:textIsSelectable="true"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_gp_vc_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Type " />
+                    android:text="Type "
+                    android:textStyle="bold" />
 
                 <RadioGroup
                     android:id="@+id/radio_gp_vc_type"
@@ -400,7 +426,8 @@
                     android:id="@+id/tv_gp_vc_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Name of GP/VC  " />
+                    android:text="Name of GP/VC  "
+                    android:textStyle="bold" />
 
 
                 <EditText
@@ -414,6 +441,7 @@
                     android:hint=""
                     android:inputType="none"
                     android:textIsSelectable="true"
+                    android:textStyle="bold"
 
                     />
 
@@ -422,7 +450,8 @@
                     android:id="@+id/tv_caste"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Caste " />
+                    android:text="Caste "
+                    android:textStyle="bold" />
 
 
                 <android.support.v4.widget.Space
@@ -448,7 +477,8 @@
                     android:id="@+id/tv_religion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Religion " />
+                    android:text="Religion "
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/spinner_religion"
@@ -468,7 +498,8 @@
                     android:id="@+id/tv_acquired_house"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Self acquired house / Rented House" />
+                    android:text="Self acquired house / Rented House"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/spinner_acquired_house"
@@ -490,7 +521,8 @@
                     android:id="@+id/tv_house_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Type of House" />
+                    android:text="Type of House"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/spinner_house_type"
@@ -511,7 +543,8 @@
                     android:id="@+id/tv_secc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Weather listed under SECC" />
+                    android:text="Weather listed under SECC"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/spinner_secc"
@@ -532,7 +565,8 @@
                     android:id="@+id/tv_secc_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Type of SECC" />
+                    android:text="Type of SECC"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/spinner_secc_type"
@@ -579,4 +613,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

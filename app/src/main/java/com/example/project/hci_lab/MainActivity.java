@@ -65,21 +65,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-        VideoView videoview = (VideoView) findViewById(R.id.videoView);
-        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.test);
-        videoview.setVideoURI(uri);
-        videoview.start();
-
-        videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-
-
-            public void onCompletion(MediaPlayer mp) {
-                mp.start(); //need to make transition seamless.
-                }
-
-
-        });
+//
+//        VideoView videoview = (VideoView) findViewById(R.id.videoView);
+//        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.test);
+//        videoview.setVideoURI(uri);
+//        videoview.start();
+//
+//        videoview.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//
+//
+//            public void onCompletion(MediaPlayer mp) {
+//                mp.start(); //need to make transition seamless.
+//                }
+//
+//
+//        });
 
 
       // Adding click listener to button.
